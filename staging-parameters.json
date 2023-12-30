@@ -4,6 +4,9 @@
     "parameters": {
         "sku": {
             "value": "Basic"
+        },
+        "tag": {
+            "value": "staging"
         }
     }
 }
