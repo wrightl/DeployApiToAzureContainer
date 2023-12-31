@@ -30,9 +30,9 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        scope: subscription
-        region: uksouth
-        # resourceGroupName: ${{ secrets.AZURE_RG }}
+        # scope: subscription
+        # region: uksouth
+        resourceGroupName: ${{ secrets.AZURE_RG }}
         parameters: ./deploy/staging-parameters.json
         template: ./deploy/main.bicep
         failOnStdErr: false
