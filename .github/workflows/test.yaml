@@ -31,8 +31,8 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        parameters: ./staging-parameters.json
-        template: ./main.bicep
+        parameters: ./deploy/staging-parameters.json
+        template: ./deploy/main.bicep
         failOnStdErr: false
 
 
