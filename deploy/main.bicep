@@ -1,5 +1,5 @@
-param sku string
-param tag string
+// param sku string
+// param tag string
 
 // @allowed([
 //   'staging'
