@@ -7,13 +7,14 @@ param tag string
   'live'
 ])
 param deploymentType string = 'staging'
-param location string = deployment().location
+param location string = 'uksouth'
 
-resource rg 'Microsoft.Resources/resourceGroups@2023-07-01' = {
+// Not working for some reason...
+resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: 'rg-portal-${deploymentType}'
   location: location
   tags: {
-    owner: tag
+    environment: tag
   }
 }
 

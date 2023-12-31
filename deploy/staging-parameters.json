@@ -7,6 +7,9 @@
         },
         "tag": {
             "value": "staging"
+        },
+        "location":{
+            "value": "uksouth"
         }
     }
 }

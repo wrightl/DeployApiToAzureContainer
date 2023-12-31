@@ -14,7 +14,17 @@ module acrDeploy 'acr.bicep' = {
   params: {
     sku: sku
     tag: tag
-    deploymentType: deploymentType
+    // deploymentType: deploymentType
     location: location
   }
 }
+
+// module acrDeploy 'acr.bicep' = {
+//   name: 'acrDeploy'
+//   params: {
+//     sku: sku
+//     tag: tag
+//     // deploymentType: deploymentType
+//     location: location
+//   }
+// }
