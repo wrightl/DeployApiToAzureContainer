@@ -44,9 +44,9 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    # - name: Build the image and push it to ACR
-    #   uses: docker/build-push-action@v5.1.0
-    #   with:
-    #     push: true
-    #     tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/aspcoresample:${{ github.sha }}
-    #     file: aspnet-core-dotnet-core/Dockerfile
+    - name: Build the image and push it to ACR
+      uses: docker/build-push-action@v5.1.0
+      with:
+        push: true
+        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/emportal:${{ github.sha }}
+        file: PortalApi/Dockerfile
