@@ -10,18 +10,19 @@ param tag string
 param location string = resourceGroup().location
 
 param baseName string = 'em-portal'
-param acrName string = 'portalregistry${uniqueString(resourceGroup().id)}'
+//param acrName string = 'portalregistry${uniqueString(resourceGroup().id)}'
 
-module acrDeploy 'acr.bicep' = {
-  name: 'acrDeploy'
-  params: {
-    acrName: acrName
-    sku: sku
-    tag: tag
-    // deploymentType: deploymentType
-    location: location
-  }
-}
+// Can't use this at the moment because it'll remove the admin access needed for github actions to push to acr
+// module acrDeploy 'acr.bicep' = {
+//   name: 'acrDeploy'
+//   params: {
+//     acrName: acrName
+//     sku: sku
+//     tag: tag
+//     // deploymentType: deploymentType
+//     location: location
+//   }
+// }
 
 // LA workspace required...
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-03-01-preview' = {
