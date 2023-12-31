@@ -38,10 +38,10 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-03
   })
 }
 
-resource acr 'Microsoft.ContainerRegistry/registries@2023-07-01' existing = {
-  // scope: resourceGroup('bicep-modules')
-  name: acrName
-}
+// resource acr 'Microsoft.ContainerRegistry/registries@2023-07-01' existing = {
+//   // scope: resourceGroup('bicep-modules')
+//   name: acrName
+// }
 
 resource environment 'Microsoft.App/managedEnvironments@2023-05-01' = {
   name: '${baseName}-environment'
