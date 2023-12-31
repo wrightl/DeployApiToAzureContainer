@@ -33,7 +33,7 @@ jobs:
         # scope: subscription
         # region: uksouth
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        parameters: ./deploy/staging-parameters.json
+        parameters: ./deploy/staging-parameters.json gitHash=${{ github.sha }}
         template: ./deploy/main.bicep
         failOnStdErr: false
 
@@ -48,5 +48,5 @@ jobs:
       uses: docker/build-push-action@v5.1.0
       with:
         push: true
-        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/emportal:${{ github.sha }}
+        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/emportal/api:${{ github.sha }}
         context: PortalApi
