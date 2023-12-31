@@ -24,7 +24,7 @@ module stack 'resources.bicep' = {
   params: {
     sku: sku
     tag: tag
-    deploymentType: deploymentType
+    // deploymentType: deploymentType
     location: location
   }
 }
