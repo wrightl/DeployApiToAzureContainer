@@ -65,15 +65,25 @@ module service 'container.bicep' = {
   name: '${baseName}-service-deploy'
   params: {
     location: location
-    containerAppName: '${baseName}-backend-02'
+    containerAppName: '${baseName}-api'
     containerImage: '${acr.properties.loginServer}/emportal/api:${gitHash}'
-    containerPort: 3500
+    containerPort: 80
     containerRegistry: acr.properties.loginServer
     containerRegistryUsername: acr.listCredentials().username
     containerRegistryPassword: acr.listCredentials().passwords[0].value
     environmentId: environment.id
     isExternalIngress: true
     minReplicas: 1
+    env: [
+      {
+        name: 'ASPNETCORE_ENVIRONMENT'
+        value: 'Development'
+      }
+      {
+        name: 'ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS'
+        value: 'true'
+      }
+    ]
     // env: [
     //   {
     //     name: 'DB_USERNAME'
