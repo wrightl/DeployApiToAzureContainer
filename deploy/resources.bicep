@@ -72,7 +72,7 @@ module service 'container.bicep' = {
     containerRegistryUsername: acr.listCredentials().username
     containerRegistryPassword: acr.listCredentials().passwords[0].value
     environmentId: environment.id
-    isExternalIngress: true
+    isExternalIngress: false
     minReplicas: 1
     env: [
       {
