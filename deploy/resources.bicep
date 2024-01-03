@@ -67,7 +67,7 @@ module service 'container.bicep' = {
     location: location
     containerAppName: '${baseName}-api'
     containerImage: '${acr.properties.loginServer}/emportal/api:${gitHash}'
-    containerPort: 80
+    containerPort: 3500
     containerRegistry: acr.properties.loginServer
     containerRegistryUsername: acr.listCredentials().username
     containerRegistryPassword: acr.listCredentials().passwords[0].value
